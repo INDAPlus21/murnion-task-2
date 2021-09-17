@@ -2,9 +2,11 @@ use std::io;
 use std::io::prelude::*;
 use std::cmp;
 
+/// Takes an input file with two numbers R and C, in a format of a single line "r c"
+/// Then converts it into an output string displaying a rectangle R wide and C long
 fn main() {
     // Get the input
-    let input = io::stdin();
+    let input = io::stdin(); 
     let mut s = &input.lock().lines().map(|_line| _line.ok().unwrap()).collect::<Vec<String>>()[0];
     let mut values = s.split(" ");
 
@@ -23,8 +25,7 @@ fn main() {
     }
 }
 
-
-/// Just a function to map numbers to chars, where any number above 9 is a dot.
+/// Map numbers to chars, where any number above 9 is a dot.
 fn dist_map(x: usize) -> char {
     match x {
         1 => '1',
